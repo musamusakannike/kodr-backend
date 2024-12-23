@@ -2,7 +2,11 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
+const connectDB = require("./config/db.config");
 
+connectDB();
+
+// Middleware
 const app = express();
 app.use(express.json());
 app.use(cors());
